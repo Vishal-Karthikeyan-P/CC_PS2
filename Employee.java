@@ -20,6 +20,7 @@ class employee{
 
 public class Employee{
     public static void main(String[] args){
+        ArrayList<employee> Elist = new ArrayList<>();
         
     }
 }
