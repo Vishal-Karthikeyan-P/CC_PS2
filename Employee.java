@@ -52,9 +52,12 @@ public class Employee{
             idx++;
         }
     }
-    public static void disp()
+    public static void dispAll()
     {
-
+        for(employee e : eList)
+        {
+                e.display();
+        }
     }
     //add()
     //search()
