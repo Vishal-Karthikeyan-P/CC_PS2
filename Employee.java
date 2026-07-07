@@ -38,6 +38,7 @@ public class Employee{
 
          employee.add(new employee(name,empId,department,salary));
          
+        
     }
     public static void search()
     {
@@ -50,26 +51,88 @@ public class Employee{
             }
         }
     }
+    //This deletes the employee details of the given employee ID
     public static void delete()
     {
-
+        System.out.println("Enter emp id to delete:");
+        int delete=sc.nextInt();
+        int idx=0;
+        sc.nextLine();
+        for (employee e : eList)
+        {
+            if(e.empID == delete)
+            {
+                eList.remove(idx);
+            }
+            idx++;
+        }
     }
+    //This function updates all the values of a particular employee ID and updates it in the same ID.
     public static void update()
     {
-
+        System.out.println("Enter emp id to update:");
+        int update=sc.nextInt();
+        int idx=0;
+        sc.nextLine();
+        String nName;
+        String nDept;
+        String nSalary;
+        for (employee e : eList)
+        {
+            if(e.empID == update)
+            {
+                System.out.println("Enter new name:");
+                nName=sc.nextLine();
+                System.out.println("Enter new department:");
+                nDept=sc.nextLine();
+                System.out.println("Enter new Salary:");
+                nSalary=sc.nextLine();
+                eList.set(idx, new employee(e.empID, nName, nDept, nSalary));
+                break;
+            }
+            idx++;
+        }
     }
-    public static void disp()
+    public static void dispAll()
     {
-        
+        for(employee e : eList)
+        {
+                e.display();
+        }
     }
-    //add()
-    //search()
-    //delete()
-    //update()
-    public static void main(String[] args){
-        ArrayList<employee> Elist = new ArrayList<>();
-        
 
+    public static void main(String[] args){
+        int choice;
+        boolean menu= true;
+        while(menu)
+        {
+            System.out.println("Employee Management\n 1.Add\n2.Search\n3.Update\n4.Delete\n5.Display all employees\n6.Exit\nEnter choice:");
+            choice=sc.nextInt();
+            sc.nextLine();
+            switch(choice)
+            {
+                case 1:
+                    eList.add();
+                    break;
+                case 2:
+                    eList.search();
+                    break;
+                case 3:
+                    eList.update();
+                    break;
+                case 4:
+                    eList.delete();
+                    break;
+                case 5:
+                    eList.dispAll();
+                    break;
+                case 6:
+                    menu=false;
+                    break;
+                default:
+                    System.out.println("Enter only numbers from 1 to 6");
+            }
+        }
     }
 }
 
