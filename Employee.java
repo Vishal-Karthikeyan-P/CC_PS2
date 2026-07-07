@@ -71,13 +71,39 @@ public class Employee{
                 e.display();
         }
     }
-    //add()
-    //search()
-    //delete()
-    //update()
-    public static void main(String[] args){
-        
 
+    public static void main(String[] args){
+        int choice;
+        boolean menu= true;
+        while(menu)
+        {
+            System.out.println("Employee Management\n 1.Add\n2.Search\n3.Update\n4.Delete\n5.Display all employees\n6.Exit\nEnter choice:");
+            choice=sc.nextInt();
+            sc.nextLine();
+            switch(choice)
+            {
+                case 1:
+                    eList.add();
+                    break;
+                case 2:
+                    eList.search();
+                    break;
+                case 3:
+                    eList.update();
+                    break;
+                case 4:
+                    eList.delete();
+                    break;
+                case 5:
+                    eList.dispAll();
+                    break;
+                case 6:
+                    menu=false;
+                    break;
+                default:
+                    System.out.println("Enter only numbers from 1 to 6");
+            }
+        }
     }
 }
 
