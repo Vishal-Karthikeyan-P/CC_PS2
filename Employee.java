@@ -19,8 +19,10 @@ class employee{
 }
 
 public class Employee{
+    
     public static void main(String[] args){
-        
+        ArrayList<employee> eList=new ArrayList<>();
+
     }
 }
 
