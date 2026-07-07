@@ -22,9 +22,21 @@ public class Employee{
     {
 
     }
+    //This deletes the employee details of the given employee ID
     public static void delete()
     {
-
+        System.out.println("Enter emp id to delete:");
+        int delete=sc.nextInt();
+        int idx=0;
+        sc.nextLine();
+        for (employee e : eList)
+        {
+            if(e.empID == delete)
+            {
+                eList.remove(idx);
+            }
+            idx++;
+        }
     }
     //This function updates all the values of a particular employee ID and updates it in the same ID.
     public static void update()
