@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 class employee{
     int empId;
     String name;
@@ -36,7 +38,7 @@ public class Employee{
          double salary = sc.nextDouble();
          sc.nextLine();
 
-         employee.add(new employee(name,empId,department,salary));
+         eList.add(new employee(empId,name,department,salary));
          
         
     }
@@ -60,7 +62,7 @@ public class Employee{
         sc.nextLine();
         for (employee e : eList)
         {
-            if(e.empID == delete)
+            if(e.empId == delete)
             {
                 eList.remove(idx);
             }
@@ -76,18 +78,19 @@ public class Employee{
         sc.nextLine();
         String nName;
         String nDept;
-        String nSalary;
+        double nSalary;
         for (employee e : eList)
         {
-            if(e.empID == update)
+            if(e.empId == update)
             {
                 System.out.println("Enter new name:");
                 nName=sc.nextLine();
                 System.out.println("Enter new department:");
                 nDept=sc.nextLine();
                 System.out.println("Enter new Salary:");
-                nSalary=sc.nextLine();
-                eList.set(idx, new employee(e.empID, nName, nDept, nSalary));
+                nSalary=sc.nextDouble();
+                sc.nextLine();
+                eList.set(idx, new employee(e.empId, nName, nDept, nSalary));
                 break;
             }
             idx++;
@@ -112,19 +115,19 @@ public class Employee{
             switch(choice)
             {
                 case 1:
-                    eList.add();
+                    add();
                     break;
                 case 2:
-                    eList.search();
+                    search();
                     break;
                 case 3:
-                    eList.update();
+                    update();
                     break;
                 case 4:
-                    eList.delete();
+                    delete();
                     break;
                 case 5:
-                    eList.dispAll();
+                    dispAll();
                     break;
                 case 6:
                     menu=false;
